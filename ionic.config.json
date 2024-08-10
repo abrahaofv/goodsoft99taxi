@@ -1,7 +1,0 @@
-{
-  "name": "goodsoft99taxi",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}

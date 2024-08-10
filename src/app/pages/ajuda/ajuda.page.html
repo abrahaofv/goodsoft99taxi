@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Ajuda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Ajuda</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="image-container">
+    <ion-img 
+    src="../../../assets/images/logo-goodsoft.png"
+    alt="Goodsoft Informática LTDA"
+    class="logo-image">
+    </ion-img>    
+  </div>    
+  <div class="infos-container" (click)="fazerLigacao()">
+      <ion-icon class="icon" name="call-outline" size="large" (click)="fazerLigacao()"></ion-icon>
+      <ion-label class="label" (click)="fazerLigacao()"><h1>(21) 2544-0159</h1></ion-label>        
+  </div>  
+  <div class="infos-container" (click)="enviarEmail()">
+    <ion-icon class ="icon" name="mail-outline" size="large" (click)="enviarEmail()"></ion-icon>
+    <ion-label class="label" (click)="enviarEmail()"><h1 class="email-text">e-mail: contato&#64;goodsoft.com.br</h1></ion-label>  
+  </div>
+  <div class="infos-container" (click)="abrirWhatsApp()">
+    <ion-icon class ="icon" name="logo-whatsapp" size="large" (click)="abrirWhatsApp()"></ion-icon>
+    <ion-label class="label" (click)="abrirWhatsApp()"><h1>WhatsApp: (21) 98476-6888</h1></ion-label>  
+  </div>
+
+  <div id="DivParceiros">
+    <p id="Parceiros">Parceiros</p>
+  </div>  
+
+  <div id="parceiros">    
+    <img loading="lazy" src="../../../assets/images/tecnospeed-white-goodsoft.png" alt="Tecnosspeed">
+    <img loading="lazy" src="../../../assets/images/logo-software-express-goodsoft.png" alt="Software Express">
+    <img loading="lazy" src="../../../assets/images/ez-tech-goodsoft.png" alt="EZ Tech">
+    <img loading="lazy" src="../../../assets/images/company-tech-goodsoft.png" alt="Company Tech">
+    <img loading="lazy" src="../../../assets/images/ScanSource-goodsoft.png" alt="ScanSource">
+  </div>  
+
+  <div id="horario">
+    <p id="textohorario">HORÁRIO DE FUNCIONAMENTO: Segunda a sexta das 8h ás 17h. Sábados, das 8h ás 13h.</p>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="custom-fab">
+    <ion-fab-button class="fabbutton" (click)="abrirWhatsApp()">
+      <ion-icon name="logo-whatsapp"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

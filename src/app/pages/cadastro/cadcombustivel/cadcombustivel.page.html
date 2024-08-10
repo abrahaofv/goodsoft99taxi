@@ -1,0 +1,67 @@
+<!-- src/app/pages/cadcombustivel/cadcombustivel.page.html -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Cadastro de Combustível</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Código</ion-label>
+    <ion-input type="number" inputmode="numeric" [(ngModel)]="newCombustivel.id" placeholder="Digite o código do combustível"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Nome</ion-label>
+    <ion-input [(ngModel)]="newCombustivel.nome" placeholder="Digite o nome"></ion-input>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-label position="stacked">Tipo de produto</ion-label>
+    <ion-select [(ngModel)]="newCombustivel.tipoproduto" required>
+      <ion-select-option *ngFor="let tipoproduto of tiposproduto" [value]="tipoproduto">{{ tipoproduto }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Preço</ion-label>
+    <ion-input [(ngModel)]="newCombustivel.preco" type="text" inputmode="decimal" placeholder="Digite o preço"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Bombas (separadas por vírgula)</ion-label>
+    <ion-input [(ngModel)]="newCombustivel.idbombas" type="text" inputmode="decimal" placeholder="Digite as bombas"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Bicos (separados por vírgula)</ion-label>
+    <ion-input [(ngModel)]="newCombustivel.idbicos" type="text" inputmode="decimal" placeholder="Digite os bicos"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">NCM</ion-label>
+    <ion-input [(ngModel)]="newCombustivel.ncm" type="number" inputmode="numeric" placeholder="Digite o NCM"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">ANP</ion-label>
+    <ion-input [(ngModel)]="newCombustivel.anp" type="number" inputmode="numeric" placeholder="Digite o ANP"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Código de Barras</ion-label>
+    <ion-input [(ngModel)]="newCombustivel.codigobarras" type="number" inputmode="numeric" placeholder="Digite o Código de Barras"></ion-input>
+  </ion-item>
+
+  <ion-item>        
+    <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="newCombustivel.status">Status (Ativo ou Inativo)
+    </ion-checkbox>
+  </ion-item>
+
+  <ion-button expand="block" (click)="saveCombustivel()">Gravar</ion-button>
+  <ion-button expand="block" color="secondary" (click)="voltarPagina()">Cancelar</ion-button>
+</ion-content>

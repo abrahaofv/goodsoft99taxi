@@ -1,0 +1,43 @@
+<!--  src\app\pages\cadastro\produto\produto.page.html -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-accordion-group>
+    <ion-accordion *ngFor="let produto of produtos">
+      <ion-item slot="header">
+        <ion-label>{{ produto.id }} - {{ produto.nome }} - R$:{{ produto.preco | number: '1.2-2' }}</ion-label>
+        <ion-buttons slot="end">
+          <ion-button (click)="editProduto(produto)"> Editar </ion-button>
+          <ion-button color="danger" (click)="deleteProduto(produto.id)"> Deletar </ion-button>
+        </ion-buttons>
+      </ion-item>
+      <ion-list slot="content">
+        <ion-item>
+          <ion-label>
+            <h2>Código: {{ produto.id }}</h2>
+            <p>Nome: {{ produto.nome }}</p>
+            <p>Tipo produto: {{ produto.tipoproduto }}</p>
+            <p>Preço: {{ produto.preco | number: '1.2-2' }}</p>
+            <p>NCM: {{ produto.ncm }}</p>
+            <p>Código de barras: {{ produto.codigobarras }}</p>
+            <p>Status: {{ retornaStatusString(produto.status) }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="editProduto({ id: null, nome: '', idbicos: '', idbombas: '', preco: 0.0000, tipoproduto: '', status: true, ehcombustivel: false, ncm: '', anp: '', codigobarras: '' })">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

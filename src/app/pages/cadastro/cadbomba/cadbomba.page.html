@@ -1,0 +1,23 @@
+<!-- src/app/pages/cadbomba/cadbomba.page.html -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Cadastro de Bombas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Código da Bomba</ion-label>
+    <ion-input type="number" inputmode="numeric" [(ngModel)]="newBomba.idbomba" placeholder="Digite o código da bomba"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Bicos (separados por vírgula)</ion-label>
+    <ion-input type="text" inputmode="decimal" [(ngModel)]="newBomba.idbicos" placeholder="Digite os bicos"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="saveBomba()">Gravar</ion-button>
+  <ion-button expand="block" color="secondary" (click)="voltarPagina()">Cancelar</ion-button>
+</ion-content>

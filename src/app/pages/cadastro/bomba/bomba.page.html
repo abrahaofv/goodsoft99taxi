@@ -1,0 +1,38 @@
+<!-- src/app/pages/cadastro/bomba/bomba.page.html -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Bombas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-accordion-group>
+    <ion-accordion *ngFor="let bomba of bombas">
+      <ion-item slot="header">
+        <ion-label>Bomba: {{ bomba.idbomba }}</ion-label>
+        <ion-buttons slot="end">
+          <ion-button (click)="editBomba(bomba)"> Editar </ion-button>
+          <ion-button color="danger" (click)="deleteBomba(bomba.idbomba)"> Deletar </ion-button>
+        </ion-buttons>
+      </ion-item>
+      <ion-list slot="content">
+        <ion-item>
+          <ion-label>
+            <!-- <h2>Bomba: {{ bomba.idbomba }}</h2> -->
+            <p>Bicos: {{ bomba.idbicos }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="editBomba({ idbomba: null, idbicos: '' })">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

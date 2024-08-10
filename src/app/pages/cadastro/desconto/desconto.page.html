@@ -1,0 +1,52 @@
+<!-- src/app/pages/cadastro/desconto/desconto.page.html -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Lista de Descontos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-accordion-group>
+    <ion-accordion *ngFor="let desconto of descontos">
+      <ion-item slot="header">
+        <ion-label>
+          <span *ngIf="!desconto?.cancelado">
+            Desconto: {{ desconto.id }} - R${{ desconto.totaldesconto | number: '1.2-2' }} - {{ formatDateTime(desconto.datahora) }} - Atendente: {{ desconto.nomeatendente }}
+          </span>
+          <span *ngIf="desconto?.cancelado" [ngStyle]="{'color': 'red'}">
+            Desconto Cancelado: {{ desconto.id }} - R${{ desconto.totaldesconto | number: '1.2-2' }} - {{ formatDateTime(desconto.datahora) }} - Atendente: {{ desconto.nomeatendente }}
+          </span>
+        </ion-label>
+        <ion-buttons slot="end">
+          <ion-button (click)="viewDesconto(desconto)">Visualizar</ion-button>
+          <ion-button color="danger" (click)="cancelaDesconto(desconto.id)">Cancelar</ion-button>
+        </ion-buttons>
+      </ion-item>
+      <ion-list slot="content">
+        <ion-item *ngFor="let item of descontosCombustiveis[desconto.id]">
+          <ion-label>
+            <!-- <h2>Código: {{ item.id }}</h2> -->
+            <p>Bomba: {{ item.idbomba }}</p>
+            <p>Bico: {{ item.idbico }}</p>
+            <p>Combustível: {{ item.nome }}</p>
+            <p>Preço: {{ item.preco }}</p>
+            <p>Total de litros abastecidos: {{ item.totallitros | number: '1.2-2'}}</p>
+            <p>Total sem desconto: R${{ item.totalprecocombustivel | number: '1.2-2'}}</p>
+            <p>Total de desconto recebido: R${{ item.totaldescontorecebidocombustivel | number: '1.2-2'}}</p>            
+            <p color="danger">Total com desconto: R${{ item.totaldescontocombustivel | number: '1.2-2'}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="redirectGerarDesconto()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

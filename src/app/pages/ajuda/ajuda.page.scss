@@ -1,0 +1,109 @@
+ion-content {
+    //--background: #54595F;
+    --background: #154b7f;
+    /* Exemplo de cor de fundo cinza claro */
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    //align-items: center;
+    //height: 100%;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.infos-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+ion-img.logo-image {
+    width: 257px;
+    height: 110px;
+}
+
+.label {
+    color: whitesmoke;
+    margin-left: 05px;
+    margin-right: 05px;
+    //text-align: left;
+}
+
+ion-icon.icon {
+    color: whitesmoke;
+}
+
+#parceiros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#parceiros img {
+    max-width: 18%;
+    /* Ajuste a porcentagem conforme necessário */
+    height: auto;
+    margin: 10px;
+}
+
+#DivParceiros {
+    margin-top: 50px;
+}
+
+#horario {
+    text-align: center;
+    color: whitesmoke;
+    font-family: "Roboto", Sans-serif;
+    font-weight: 400;
+    background: #0e3153;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+}
+
+#textohorario {
+
+    // Estilo específico para dispositivos móveis
+    @media (max-width: 768px) {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
+#Parceiros {
+    color: whitesmoke;
+    font-family: "Roboto", Sans-serif;
+    padding-left: 20px;
+}
+
+ion-fab-button {
+    --background: #25d366;
+}
+
+.custom-fab {
+    // Estilo padrão para a web
+    bottom: 7;
+
+    // Estilo específico para dispositivos móveis
+    @media (max-width: 768px) {
+        bottom: 110px;
+        /* Move o botão 110px para cima em dispositivos móveis */
+    }
+}
+
+.email-text {
+    // Estilo padrão para desktop
+    font-size: 28px;
+
+    // Estilo específico para dispositivos móveis
+    @media (max-width: 768px) {
+        font-size: 21px; // Ajuste este valor conforme necessário
+    }
+}

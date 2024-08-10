@@ -1,0 +1,145 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+        <ion-list id="inbox-list">
+          <ion-list-header>Goodsoft 99TaxiCorp</ion-list-header>
+          <ion-note>Goodsoft LTDA</ion-note>
+          <!-- Menu Gerar Desconto -->
+          <ion-menu-toggle auto-hide="false">
+            <ion-item
+              routerDirection="root"
+              [routerLink]="['caddesconto']"
+              lines="none"
+              detail="false"
+              routerLinkActive="selected"
+            >
+              <ion-icon
+                aria-hidden="true"
+                slot="start"
+                [ios]="'pricetag' + '-outline'"
+                [md]="'pricetag' + '-sharp'"
+              ></ion-icon>
+              <ion-label>Gerar Desconto</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <!-- Menu Listar Descontos -->
+          <ion-menu-toggle auto-hide="false">
+            <ion-item
+              routerDirection="root"
+              [routerLink]="['desconto']"
+              lines="none"
+              detail="false"
+              routerLinkActive="selected"
+            >
+              <ion-icon aria-hidden="true" slot="start" [ios]="'list' + '-outline'" [md]="'list' + '-sharp'"></ion-icon>
+              <ion-label>Listar Desconto</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <!-- Menu Cadastro -->
+          <ion-accordion-group>
+            <ion-accordion value="first">
+              <ion-item slot="header" lines="none" detail="false" routerLinkActive="selected">
+                <ion-icon
+                  aria-hidden="true"
+                  slot="start"
+                  [ios]="'add-circle' + '-outline'"
+                  [md]="'add-circle' + '-sharp'"
+                ></ion-icon>
+                <ion-label>Cadastro</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                <!-- Bomba -->
+                <ion-menu-toggle auto-hide="false">
+                  <ion-item
+                    class="custom-selected"
+                    routerDirection="root"
+                    [routerLink]="['bomba']"
+                    lines="none"
+                    detail="false"
+                    routerLinkActive="selected"
+                  >
+                    <img
+                      aria-hidden="true"
+                      slot="start"
+                      src="../assets/images/bomba-preta.png"
+                      class="normal-icon"
+                      alt="Bomba Icon"
+                    />
+                    <ion-label>Bomba</ion-label>
+                  </ion-item>
+                </ion-menu-toggle>
+                <!-- Combustível -->
+                <ion-menu-toggle auto-hide="false">
+                  <ion-item
+                    class="custom-selected"
+                    routerDirection="root"
+                    [routerLink]="['combustivel']"
+                    lines="none"
+                    detail="false"
+                    routerLinkActive="selected"
+                  >
+                  <img
+                  aria-hidden="true"
+                  slot="start"
+                  src="../assets/images/combustivel-preto.png"
+                  class="normal-icon"
+                  alt="Combustivel Icon"
+                  />
+                    <ion-label>Combustível</ion-label>
+                  </ion-item>
+                </ion-menu-toggle>
+                <!-- Produto -->
+                <!-- <ion-menu-toggle auto-hide="false">
+                  <ion-item
+                    class="custom-selected"
+                    routerDirection="root"
+                    [routerLink]="['produto']"
+                    lines="none"
+                    detail="false"
+                    routerLinkActive="selected"
+                  >
+                  <img
+                  aria-hidden="true"
+                  slot="start"
+                  src="../assets/images/produto-preto.png"
+                  class="normal-icon"
+                  alt="Produto Icon"
+                  />
+                    <ion-label>Produto</ion-label>
+                  </ion-item>
+                </ion-menu-toggle> -->
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+          <!-- Menu dinâmico do appPages -->
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item
+              routerDirection="root"
+              [routerLink]="[p.url]"
+              lines="none"
+              detail="false"
+              routerLinkActive="selected"
+            >
+              <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <!-- Health Check -->
+          <ion-menu-toggle auto-hide="false">
+            <ion-item
+              lines="none"
+              detail="false"
+              (click)="GetHealthStatus()"
+              class="custom-selected"
+            >
+              <ion-icon aria-hidden="true" slot="start" [ios]="'wifi' + '-outline'" [md]="'wifi' + '-sharp'"></ion-icon>
+              <ion-label>Testar comunicação API</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

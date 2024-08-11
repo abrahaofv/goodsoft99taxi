@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1723336739556,
+  "timestamp": 1723338620524,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -1551,7 +1551,7 @@
     "/assets/images/tecnospeed-white-goodsoft.png": "488634ee8a0786195a197b593a963b888bc9212b",
     "/assets/shapes.svg": "5413e95adabcb2cb639970051f55e0ddb64ace53",
     "/common.1df02a802ba3d051.js": "e17cd5e92f4baa2c071096292bf137e3bf5ba16f",
-    "/index.html": "1db8f4d35b53a7652ccaa824dfaf776800ccbae9",
+    "/index.html": "7f111f4dc2cd35467becb338fe54aa46f05beeca",
     "/main.45766e110a310ce0.js": "e8d2e94b10bde5d32299e3b427d87675a1a91952",
     "/polyfills-core-js.6f6bb9cc41847e1b.js": "7e36540b929b55b5a6993e43b2ad236887a1863d",
     "/polyfills-dom.886ba6c45919be5f.js": "cf8e440faaa22ccce800d562f9a12f4e6f5845f4",
